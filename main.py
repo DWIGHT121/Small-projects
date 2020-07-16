@@ -29,10 +29,10 @@ if var1 == 1:
                 days +=30
             else:
                 days+=31
-    elif month == 1:
+    elif Month == 1:
         days = 31-Date
         days = days+28
-        for month_days2 in range(Month,12):
+        for month_days2 in range(3,12):
             if month_days2%2==0:
                 days +=30
             else:
@@ -42,7 +42,7 @@ if var1 == 1:
             days = 31-Date
         else:
             days = 30-Date
-        for month_days3 in range(Month,12):
+        for month_days3 in range(Month+1,12):
             if month_days3%2==0:
                 days +=30
             else:
@@ -67,7 +67,11 @@ else:
                 days+=31
 
     else:
-        for month_days5 in range(Month,12):
+        if Month%2==0:
+            days = 31-Date
+        else:
+            days = 30-Date
+        for month_days5 in range(Month+1,12):
             if month_days5%2==0:
                 days +=30
             else:
