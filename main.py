@@ -29,9 +29,21 @@ if var1 == 1:
                 days +=30
             else:
                 days+=31
-    else:
+    elif month == 1:
+        days = 31-Date
+        days = days+28
         for month_days2 in range(Month,12):
-            if month_days%2==0:
+            if month_days2%2==0:
+                days +=30
+            else:
+                days+=31
+    else:
+        if Month%2==0:
+            days = 31-Date
+        else:
+            days = 30-Date
+        for month_days3 in range(Month,12):
+            if month_days3%2==0:
                 days +=30
             else:
                 days+=31
@@ -45,9 +57,18 @@ else:
                 days +=30
             else:
                 days+=31
+    elif Month == 1:
+        days = 31-Date
+        days = days+29
+        for month_days4 in range(3,12):
+            if month_days4%2==0:
+                days +=30
+            else:
+                days+=31
+
     else:
-        for month_days2 in range(Month,12):
-            if month_days2%2==0:
+        for month_days5 in range(Month,12):
+            if month_days5%2==0:
                 days +=30
             else:
                 days+=31
@@ -67,11 +88,14 @@ if var3 == 1:
     if datetime.now().month==2:
         days+= (31+datetime.now().day)
 
+    elif datetime.now().month==1:
+        days+=datetime.now().day
+
     else:
         days+=(31+28)
         #calculating days till previous month
-        for month_loop in range(3, datetime.now().month-1):
-            if month_loop%2==0:
+        for month_loop6 in range(3, datetime.now().month-1):
+            if month_loop6%2==0:
                     days +=30
             else:
                 days+=31
@@ -81,10 +105,13 @@ else:
     if datetime.now().month==2:
         days+= (31+datetime.now().day)
 
+    elif datetime.now().month==1:
+        days+=datetime.now().day
+
     else:
         days+=(31+29)
-        for month_loop2 in range(3, datetime.now().month-1):
-            if month_loop2%2==0:
+        for month_loop7 in range(3, datetime.now().month-1):
+            if month_loop7%2==0:
                     days +=30
             else:
                 days+=31
